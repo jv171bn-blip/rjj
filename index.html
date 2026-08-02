@@ -1712,6 +1712,12 @@
           if (step1 && step2) {
             step1.style.display = 'none';
             step2.style.display = 'block';
+            
+            try {
+              if (typeof fbq !== 'undefined') {
+                fbq('track', 'InitiateCheckout', { value: rangeAmount, currency: 'BRL' });
+              }
+            } catch (e) {}
           }
         });
       }
