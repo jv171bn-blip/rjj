@@ -2015,6 +2015,67 @@
             pessoas
             desabrigadas.</strong> Quem sobreviveu agora luta para ter o mínimo para sobreviver mais um dia.</p>
         <span>ID: 5789755</span>
+
+        <div class="carousel-wrapper" style="position: relative; max-width: 100%; overflow: hidden; margin-top: 15px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+          <div class="custom-carousel" id="auto-carousel" style="display: flex; overflow-x: auto; scroll-snap-type: x mandatory; padding: 0; margin: 0; scrollbar-width: none; -webkit-overflow-scrolling: touch; scroll-behavior: smooth;">
+            <img loading="lazy" src="images/WhatsApp Image 2026-08-02 at 19.58.30.jpeg" alt="Desastre Rio de Janeiro" style="scroll-snap-align: start; flex: 0 0 100%; height: 280px; object-fit: cover;">
+            <img loading="lazy" src="images/WhatsApp Image 2026-08-02 at 19.58.53.jpeg" alt="Desastre Rio de Janeiro" style="scroll-snap-align: start; flex: 0 0 100%; height: 280px; object-fit: cover;">
+            <img loading="lazy" src="images/WhatsApp Image 2026-08-02 at 19.59.06.jpeg" alt="Desastre Rio de Janeiro" style="scroll-snap-align: start; flex: 0 0 100%; height: 280px; object-fit: cover;">
+            <img loading="lazy" src="images/WhatsApp Image 2026-08-02 at 19.59.20.jpeg" alt="Desastre Rio de Janeiro" style="scroll-snap-align: start; flex: 0 0 100%; height: 280px; object-fit: cover;">
+            <img loading="lazy" src="images/WhatsApp Image 2026-08-02 at 19.59.39.jpeg" alt="Desastre Rio de Janeiro" style="scroll-snap-align: start; flex: 0 0 100%; height: 280px; object-fit: cover;">
+            <img loading="lazy" src="images/WhatsApp Image 2026-08-02 at 20.00.01.jpeg" alt="Desastre Rio de Janeiro" style="scroll-snap-align: start; flex: 0 0 100%; height: 280px; object-fit: cover;">
+          </div>
+          
+          <button id="car-prev" style="position: absolute; left: 8px; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.8); color: #333; border: none; border-radius: 50%; width: 40px; height: 40px; font-size: 18px; cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 10; box-shadow: 0 2px 6px rgba(0,0,0,0.2);">&#10094;</button>
+          <button id="car-next" style="position: absolute; right: 8px; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.8); color: #333; border: none; border-radius: 50%; width: 40px; height: 40px; font-size: 18px; cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 10; box-shadow: 0 2px 6px rgba(0,0,0,0.2);">&#10095;</button>
+        </div>
+        <style>
+          #auto-carousel::-webkit-scrollbar { display: none; }
+          @media (min-width: 768px) {
+            #auto-carousel img {
+              height: 400px !important;
+            }
+          }
+        </style>
+        <script>
+          (function() {
+            const carousel = document.getElementById('auto-carousel');
+            const prevBtn = document.getElementById('car-prev');
+            const nextBtn = document.getElementById('car-next');
+            let autoPlayTimer;
+
+            function getIndex() {
+              const width = carousel.clientWidth;
+              return Math.round(carousel.scrollLeft / width);
+            }
+            
+            function scrollTo(index) {
+              const width = carousel.clientWidth;
+              const maxIndex = carousel.children.length - 1;
+              if (index > maxIndex) index = 0;
+              if (index < 0) index = maxIndex;
+              carousel.scrollTo({ left: index * width, behavior: 'smooth' });
+            }
+
+            function nextSlide() { scrollTo(getIndex() + 1); }
+            function prevSlide() { scrollTo(getIndex() - 1); }
+
+            function startAutoPlay() {
+              stopAutoPlay();
+              autoPlayTimer = setInterval(nextSlide, 3000);
+            }
+
+            function stopAutoPlay() { clearInterval(autoPlayTimer); }
+
+            nextBtn.addEventListener('click', (e) => { e.preventDefault(); nextSlide(); startAutoPlay(); });
+            prevBtn.addEventListener('click', (e) => { e.preventDefault(); prevSlide(); startAutoPlay(); });
+            carousel.addEventListener('touchstart', stopAutoPlay, {passive: true});
+            carousel.addEventListener('touchend', startAutoPlay, {passive: true});
+            
+            startAutoPlay();
+          })();
+        </script>
+
       </div>
       <div class="detailsVakinha d-flex flex-wrap">
         <div class="detalhes">
