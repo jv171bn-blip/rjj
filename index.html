@@ -1517,12 +1517,13 @@
           let cpfCliente = generateCpf();
 
           // Payload UTM 
+          const _UTM = typeof UTM !== 'undefined' ? UTM : (window.UTM || {});
           const utmPayload = {
-            utm_source: UTM.utm_source || 'direct',
-            utm_medium: UTM.utm_medium || 'direct',
-            utm_campaign: UTM.utm_campaign || 'direct',
-            utm_content: UTM.utm_content || 'direct',
-            utm_term: UTM.utm_term || 'direct'
+            utm_source: _UTM.utm_source || 'direct',
+            utm_medium: _UTM.utm_medium || 'direct',
+            utm_campaign: _UTM.utm_campaign || 'direct',
+            utm_content: _UTM.utm_content || 'direct',
+            utm_term: _UTM.utm_term || 'direct'
           };
 
           const requestBody = {
