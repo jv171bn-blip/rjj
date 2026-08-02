@@ -1039,7 +1039,9 @@ margin-top:40px;
 }
 footer .aviso{
 position: absolute;
-top: -30px;
+bottom: 100%;
+top: auto;
+padding-bottom: 10px;
 font-size: 12px;
 line-height: 18px;
 font-weight: 400;
@@ -1302,7 +1304,8 @@ margin-top:80px;
 padding-bottom: 100px;
 }
 footer .aviso{
-top:-70px;
+bottom: 100%;
+top: auto;
 }
 footer .content{
 flex-wrap:wrap;
