@@ -1009,8 +1009,8 @@
       }
 
       function anyOpen() { return !!document.querySelector('.dlg:not([hidden])'); }
-      const show = el => { if (el) { el.hidden = false; lockScroll(); } };
-      const hide = el => { if (el) { el.hidden = true; if (!anyOpen()) unlockScroll(); } };
+      const show = el => { if (el) { el.hidden = false; lockScroll(); const v = el.querySelector('video'); if(v) v.play().catch(()=>{}); } };
+      const hide = el => { if (el) { el.hidden = true; if (!anyOpen()) unlockScroll(); const v = el.querySelector('video'); if(v) v.pause(); } };
 
       function markLoaderOK() {
         loader.querySelector('.spinner')?.remove();
