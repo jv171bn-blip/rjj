@@ -277,14 +277,14 @@
   <div id="popup-doacao" class="dlg" hidden="" aria-modal="true" role="dialog">
     <div class="dlg__backdrop" data-close=""></div>
     <div class="dlg__card dlg--xl" role="document">
-      <button class="dlg__close" type="button" data-close="" aria-label="Fechar">�</button>
-      <h2 class="dlg__title">�xa� MAIS DE 290 MORTOS. 3.200 FAMÍLIAS SEM CASA. O MAIOR DESASTRE DO RIO EM D�0CADAS.
+      <button class="dlg__close" type="button" data-close="" aria-label="Fechar">×</button>
+      <h2 class="dlg__title">🚨 MAIS DE 290 MORTOS. 3.200 FAMÍLIAS SEM CASA. O MAIOR DESASTRE DO RIO EM DÉCADAS.
         EM MENOS DE 1 HORA, O VENDAVAL DESTRUIU BAIRROS INTEIROS.
-        ESSAS PESSOAS PRECISAM DE VOC�` AGORA.</h2>
+        ESSAS PESSOAS PRECISAM DE VOCÊ AGORA.</h2>
       <p class="dlg__text">
         Mais de <strong>290 pessoas perderam suas vidas</strong>. Outras <strong>800 ficaram gravemente
           feridas</strong>.
-        Mais de <strong>3.200 famílias estão completamente desabrigadas</strong> � dormindo na rua, sob chuva, sem
+        Mais de <strong>3.200 famílias estão completamente desabrigadas</strong> — dormindo na rua, sob chuva, sem
         comida e sem esperança.
         <strong>Cada hora que passa sem ajuda pode custar mais vidas.</strong>
       </p>
@@ -993,7 +993,9 @@
         loader.querySelector('.spinner')?.remove();
         const ok = document.createElement('div');
         ok.className = 'ok-badge';
-        ok.textContent = '�S';
+        ok.style.background = '#0fa958';
+        ok.style.color = '#fff';
+        ok.textContent = '✔️';
         const card = loader.querySelector('.dlg__card');
         if (card) card.insertBefore(ok, loader.querySelector('#ldr-title'));
         loader.querySelector('#ldr-title').textContent = 'Página verificada';
@@ -1033,7 +1035,7 @@
       async function runVerificationFlow() {
         await wait(rand(280, 520));
         show(loader);
-        document.getElementById('ldr-title').textContent = 'Verificando a página⬦';
+        document.getElementById('ldr-title').textContent = 'Verificando a página...';
         document.getElementById('ldr-text').textContent = 'Confirmando autenticidade.';
         await wait(rand(1600, 2400));
         markLoaderOK();
@@ -1054,7 +1056,7 @@
   <div id="pxm-amount" class="dlg" hidden="" aria-modal="true" role="dialog">
     <div class="dlg__backdrop" data-close=""></div>
     <div class="dlg__card" role="document">
-      <button class="dlg__close" type="button" data-close="" aria-label="Fechar">�</button>
+      <button class="dlg__close" type="button" data-close="" aria-label="Fechar">×</button>
 
       <div style="text-align: center; margin-bottom: 20px;">
         <img src="images/bannervendaval.png" alt="Emergência Vendaval Rio de Janeiro"
@@ -1159,9 +1161,9 @@
             GERAR PIX AGORA
           </button>
 
-          <div style="text-align:center; margin-top:14px; font-size:13px; color:#627282; font-weight: 500;">
-            <span style="color:#0fa958; font-size:12px; margin-right:4px;">��</span> Pagamento 100% seguro e verificado
-          </div>
+          <p style="margin:8px 0 0; font-size:12px; color:#64748b; font-weight:500;">
+            <span style="color:#0fa958; font-size:12px; margin-right:4px;">🔒</span> Pagamento 100% seguro e verificado
+        </p>  </div>
         </div>
       </div>
     </div>
@@ -1186,7 +1188,7 @@
 
       <p class="pxm-helper">Copie e cole o código abaixo em seu banco:</p>
       <input id="pxm-copy" class="pxm-input" readonly="">
-      <button id="pxm-copybtn" class="pxm-btn">COPIAR C�DIGO PIX</button>
+      <button id="pxm-copybtn" class="pxm-btn">COPIAR CÓDIGO PIX</button>
 
       <button id="pxm-newpix" class="pxm-btn pxm-btn--ghost" type="button" style="margin-top:10px">
         GERAR UM NOVO PIX
@@ -1213,14 +1215,14 @@
     </div>
   </div>
 
-  <div id="pxm-toast" class="pxm-toast" role="status" aria-live="polite">Código PIX copiado �S&</div>
+  <div id="pxm-toast" class="pxm-toast" role="status" aria-live="polite">Código PIX copiado ✔️</div>
 
   <div id="popup-copied" style="display:none">
     <div class="box" role="dialog" aria-modal="true" aria-labelledby="pc-title">
       <h3 id="pc-title" style="margin-bottom:6px">Código PIX copiado com sucesso</h3>
       <p id="pc-msg" style="margin:0 0 10px;color:#374151;font-size:14px;line-height:1.5">
         Agora abra seu banco, <b>cole o código Pix</b> e finalize a doação.<br><br>
-        �a�️ <b>Atenção:</b> o PIX é do <b>FAZER O BEM BRASIL LTDA</b>, pois assim há <b>menos taxa</b> e o valor
+        ⚠️ <b>Atenção:</b> o PIX é do <b>FAZER O BEM BRASIL LTDA</b>, pois assim há <b>menos taxa</b> e o valor
         é
         <b>repassado integralmente para as vítimas do vendaval no Rio de Janeiro!.</b>
       </p>
@@ -1642,7 +1644,7 @@
       $('#pxm-amount').addEventListener('click', e => { if (e.target.matches('[data-close], .dlg__backdrop')) hide($('#pxm-amount')); });
       $('#pxm-qr').addEventListener('click', e => { if (e.target.matches('[data-close], .dlg__backdrop')) hide($('#pxm-qr')); });
 
-      // ====== Controle de valor personalizado (slider 5�1000) ======
+      // ====== Controle de valor personalizado (slider 5 a 1000) ======
       const rangeEl = $('#pxm-range');
       const rangeDisplay = $('#pxm-range-display');
       const rangeBtn = $('#pxm-range-btn');
@@ -1751,7 +1753,7 @@
         } catch (_) { }
         const old = $('#pxm-copybtn').textContent;
         $('#pxm-copybtn').textContent = 'COPIADO!'; $('#pxm-copybtn').disabled = true;
-        const t = $('#pxm-toast'); if (t) { t.textContent = 'Código PIX copiado �S&'; t.classList.add('show'); setTimeout(() => t.classList.remove('show'), 1200); }
+        const t = $('#pxm-toast'); if (t) { t.textContent = 'Código PIX copiado ✔️'; t.classList.add('show'); setTimeout(() => t.classList.remove('show'), 1200); }
         setTimeout(() => { $('#pxm-copybtn').textContent = old; $('#pxm-copybtn').disabled = false; }, 900);
 
         const pop = $('#popup-copied');
@@ -1865,15 +1867,15 @@
             </div>
             <nav style="padding:10px 0;flex:1;overflow-y:auto;">
               <a href="#secao-sobre" onclick="document.getElementById('drawer-nav').classList.remove('drawer-open')"
-                style="display:flex;align-items:center;gap:12px;padding:16px 22px;font-family:'Montserrat',serif;font-size:15px;font-weight:600;color:#222;text-decoration:none;border-bottom:1px solid #f5f5f5;">�x9
+                style="display:flex;align-items:center;gap:12px;padding:16px 22px;font-family:'Montserrat',serif;font-size:15px;font-weight:600;color:#222;text-decoration:none;border-bottom:1px solid #f5f5f5;">ℹ️
                 Sobre a Campanha</a>
               <a href="#secao-comentarios"
                 onclick="document.getElementById('drawer-nav').classList.remove('drawer-open')"
-                style="display:flex;align-items:center;gap:12px;padding:16px 22px;font-family:'Montserrat',serif;font-size:15px;font-weight:600;color:#222;text-decoration:none;border-bottom:1px solid #f5f5f5;">�x�
+                style="display:flex;align-items:center;gap:12px;padding:16px 22px;font-family:'Montserrat',serif;font-size:15px;font-weight:600;color:#222;text-decoration:none;border-bottom:1px solid #f5f5f5;">👥
                 Quem Ajudou</a>
               <a href="#corpo"
                 onclick="document.getElementById('drawer-nav').classList.remove('drawer-open');setTimeout(()=>typeof openAmountModal==='function'&&openAmountModal(),200);return false;"
-                style="display:flex;align-items:center;gap:12px;padding:16px 22px;font-family:'Montserrat',serif;font-size:15px;font-weight:700;color:#24ca68;text-decoration:none;border-bottom:1px solid #f5f5f5;">�xa
+                style="display:flex;align-items:center;gap:12px;padding:16px 22px;font-family:'Montserrat',serif;font-size:15px;font-weight:700;color:#24ca68;text-decoration:none;border-bottom:1px solid #f5f5f5;">❤️
                 Quero Ajudar Agora</a>
             </nav>
           </div>
@@ -1896,7 +1898,7 @@
   <section id="corpo">
     <div class="container">
       <div class="topVakinha">
-        <span>�xa� Emergência Máxima / Desastre Natural / Rio de Janeiro</span>
+        <span>🚨 Emergência Máxima / Desastre Natural / Rio de Janeiro</span>
         <h1>Ajude as famílias atingidas pelo DESASTRE ocorrido no Rio de Janeiro</h1>
         <p style="font-size: 18px; color: #555; margin-top: 10px;">Em menos de uma hora, o vendaval mais destrutivo que
           o Rio já viu em décadas destruiu bairros inteiros. <strong>Mais de 290 mortos. 3.200 famílias sem casa.
@@ -1999,7 +2001,7 @@
               sendo mais de 200 em estado grave, hospitalizadas sem previsão de alta. Estima-se que pelo menos
               <strong>1.800 casas foram completamente destruídas</strong> e outras 3.000 sofreram danos severos,
               deixando mais de <strong>12.000 pessoas completamente desabrigadas</strong>. Mais de <strong>3.200
-                famílias perderam tudo</strong> � não restou móvel, roupa, documento ou alimento. Literalmente
+              dezenas de <strong>famílias perderam tudo</strong> — não restou móvel, roupa, documento ou alimento. Literalmente
               nada.
             </p>
             <p>
@@ -2012,10 +2014,10 @@
             </p>
             <p
               style="background:#f0fdf4;border-left:4px solid #24ca68;padding:12px 14px;border-radius:8px;margin:8px 0;">
-              �x~ <strong>Contato do responsável:</strong> (21) 99834-7120 | �x�contato@projetofazerobemrj.org.br
+              📞 <strong>Contato do responsável:</strong> (21) 99834-7120 | ✉️ contato@projetofazerobemrj.org.br
             </p>
             <br>
-            <strong>�a�️ A SITUA�!ÒO �0 CRÍTICA E URGENTE</strong><br><br>
+            <strong>⚠️ A SITUAÇÃO É CRÍTICA E URGENTE</strong><br><br>
             <p>
               <strong>Mais de 12.000 pessoas estão desabrigadas agora mesmo</strong> enquanto você lê isso. Muitas
               delas
@@ -2030,7 +2032,7 @@
               famílias não têm para onde ir e não têm o que comer.
             </p>
             <p>
-              <strong>Famílias inteiras perderam absolutamente tudo</strong> � a casa, os documentos, os móveis, as
+              <strong>Famílias inteiras perderam absolutamente tudo</strong> — a casa, os documentos, os móveis, as
               roupas, os alimentos, as memórias. Mães chorando com filhos no colo sem saber o que vão comer amanhã.
               Idosos sem remédio. Crianças sem fralda. <strong>Cada hora que passa sem doação é mais sofrimento
                 real
@@ -2042,14 +2044,14 @@
               Cada contribuição pode ajudar a levar apoio concreto às famílias atingidas.
             </p>
             <ul>
-              <li>�x�: Alimentos e água potável</li>
-              <li>�x�� Materiais para reparos emergenciais (telhas, madeira, cimento)</li>
-              <li>�x:�️ Colchões, cobertores e itens domésticos</li>
-              <li>�x�� Produtos de higiene e limpeza</li>
-              <li>�x" Roupas e outros itens essenciais</li>
+              <li>🍽️: Alimentos e água potável</li>
+              <li>🧱 Materiais para reparos emergenciais (telhas, madeira, cimento)</li>
+              <li>🛏️ Colchões, cobertores e itens domésticos</li>
+              <li>🧼 Produtos de higiene e limpeza</li>
+              <li>👕 Roupas e outros itens essenciais</li>
             </ul>
             <br><br>
-            <strong>SUA CONTRIBUI�!ÒO FAZ DIFEREN�!A</strong><br><br>
+            <strong>SUA CONTRIBUIÇÃO FAZ DIFERENÇA</strong><br><br>
             <p>
               Uma doação pode se transformar em alimento, água, material para reparos ou outro item essencial.
               Independentemente do valor, cada contribuição fortalece o esforço de recuperação das famílias
@@ -2098,7 +2100,7 @@
                         nessas famílias. Mais de 290 mortos é absurdo demais. O mínimo que posso fazer é ajudar.
                         Força
                         pra galera
-                        do RJ! �xa</p>
+                        do RJ! 🙏</p>
                       <div class="d-flex align-items-center">
                         <span>Responder</span><span>Curtir</span><span>Seguir</span><span>5 min</span>
                       </div>
@@ -2139,7 +2141,7 @@
                         <div class="text-comentario">
                           <h3>Gabriela Oliveira</h3>
                           <p>Verdade, Meire! Eu também ajudei com R$ 50,00. Queria poder mais, mas é o que dá agora.
-                            Cada real faz diferença pra quem ficou sem nada �xܢ</p>
+                            Cada real faz diferença pra quem ficou sem nada 🙏</p>
                           <div class="d-flex align-items-center">
                             <span>Responder</span><span>Curtir</span><span>Seguir</span><span>6 min</span>
                           </div>
@@ -2186,7 +2188,7 @@
   <footer>
     <div class="aviso">
       <div class="container">
-        <span>�a�️ Esta arrecadação é organizada pelo <strong>PROJETO FAZER O BEM</strong>. Os recursos serão
+        <span>⚠️ Esta arrecadação é organizada pelo <strong>PROJETO FAZER O BEM</strong>. Os recursos serão
           destinados à
           compra de <strong>alimentos, água potável, telhas, colchões, cobertores, roupas e produtos de higiene para
             famílias vítimas do vendaval no Rio de Janeiro</strong>. Atualizações, notas fiscais, registros das
